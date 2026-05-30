@@ -1,0 +1,289 @@
+/* ============================================ */
+/* AMBIENT ANIMATIONS */
+/* ============================================ */
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30px, -30px);
+  }
+  50% {
+    transform: translate(-20px, 20px);
+  }
+  75% {
+    transform: translate(20px, 30px);
+  }
+}
+
+@keyframes driftSlow {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(40px, -40px);
+  }
+  50% {
+    transform: translate(-30px, 25px);
+  }
+  75% {
+    transform: translate(25px, 40px);
+  }
+}
+
+@keyframes driftMid {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(25px, -20px);
+  }
+  50% {
+    transform: translate(-15px, 15px);
+  }
+  75% {
+    transform: translate(15px, 25px);
+  }
+}
+
+/* Blob gradient animations */
+@keyframes blobDrift {
+  0% {
+    filter: blur(80px);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    filter: blur(80px);
+    opacity: 0.8;
+  }
+}
+
+/* Pink glow pulse on hero name */
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 60px rgba(255, 158, 210, 0.4),
+                0 0 120px rgba(255, 158, 210, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 80px rgba(255, 158, 210, 0.6),
+                0 0 160px rgba(255, 158, 210, 0.3);
+  }
+}
+
+/* Timeline dot pulse */
+@keyframes dotPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 158, 210, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 158, 210, 0);
+  }
+}
+
+/* Status indicator pulse */
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Gradient shift animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Rotate animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Glow border clockwise animation for projects */
+@keyframes glowBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Underline animation for links */
+@keyframes underlineReveal {
+  from {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+
+/* Line draw animation */
+@keyframes lineDraw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Float animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Subtle scale animation */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ============================================ */
+/* ANIMATION UTILITIES */
+/* ============================================ */
+
+.animate-drift {
+  animation: drift 18s ease-in-out infinite;
+}
+
+.animate-drift-slow {
+  animation: driftSlow 26s ease-in-out infinite;
+}
+
+.animate-drift-mid {
+  animation: driftMid 22s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.animate-dot-pulse {
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+.animate-status-pulse {
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  animation: gradientShift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-rotate {
+  animation: rotate 20s linear infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ============================================ */
+/* SCROLL ANIMATION MARKERS */
+/* ============================================ */
+
+[data-animate="fade-in"] {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+[data-animate="slide-up"] {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+[data-animate="scale-in"] {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* ============================================ */
+/* TRANSITIONS */
+/* ============================================ */
+
+.transition-fast {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-base {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-slow {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-border {
+  transition: border-color 0.4s ease;
+}
+
+.transition-transform {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================ */
+/* MOTION PREFERENCES */
+/* ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-animate] {
+    animation: none;
+  }
+
+  .animate-drift,
+  .animate-drift-slow,
+  .animate-drift-mid,
+  .animate-glow-pulse,
+  .animate-dot-pulse,
+  .animate-status-pulse,
+  .animate-rotate,
+  .animate-float {
+    animation: none;
+  }
+}

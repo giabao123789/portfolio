@@ -1,0 +1,150 @@
+.magnetic-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  will-change: transform;
+  gap: 0.5rem;
+}
+
+.magnetic-button__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ============================================ */
+/* PRIMARY VARIANT */
+/* ============================================ */
+
+.magnetic-button--primary {
+  background: linear-gradient(135deg, var(--pink-400), var(--pink-300));
+  color: var(--bg-primary);
+  box-shadow: 0 0 30px rgba(255, 158, 210, 0.4);
+}
+
+.magnetic-button--primary:hover {
+  box-shadow: 0 0 50px rgba(255, 158, 210, 0.6);
+  transform: scale(1.02);
+}
+
+.magnetic-button--primary:active {
+  transform: scale(0.98);
+}
+
+.magnetic-button--primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ============================================ */
+/* SECONDARY VARIANT */
+/* ============================================ */
+
+.magnetic-button--secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  box-shadow: inset 0 0 20px rgba(255, 158, 210, 0.1);
+}
+
+.magnetic-button--secondary:hover {
+  background: rgba(255, 158, 210, 0.05);
+  border-color: var(--border-glow);
+  color: var(--text-primary);
+  box-shadow: inset 0 0 30px rgba(255, 158, 210, 0.2), 0 0 20px rgba(255, 158, 210, 0.3);
+}
+
+.magnetic-button--secondary:active {
+  transform: scale(0.98);
+}
+
+.magnetic-button--secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================ */
+/* GHOST VARIANT */
+/* ============================================ */
+
+.magnetic-button--ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid transparent;
+}
+
+.magnetic-button--ghost:hover {
+  color: var(--pink-300);
+  border-bottom: 1px solid var(--pink-300);
+}
+
+.magnetic-button--ghost:active {
+  transform: scale(0.98);
+}
+
+.magnetic-button--ghost:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================ */
+/* SIZE VARIANTS */
+/* ============================================ */
+
+.magnetic-button--sm {
+  padding: 0.5rem 1rem;
+  font-size: var(--fs-small);
+}
+
+.magnetic-button--lg {
+  padding: 1rem 3rem;
+  font-size: var(--fs-h3);
+}
+
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+
+@media (max-width: 768px) {
+  .magnetic-button {
+    padding: 0.65rem 1.5rem;
+    font-size: var(--fs-small);
+  }
+
+  .magnetic-button--lg {
+    padding: 0.85rem 2rem;
+    font-size: var(--fs-body);
+  }
+}
+
+/* ============================================ */
+/* ACCESSIBILITY */
+/* ============================================ */
+
+.magnetic-button:focus-visible {
+  outline: 2px solid var(--pink-400);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .magnetic-button {
+    transition: none;
+  }
+
+  .magnetic-button:hover {
+    transform: none !important;
+  }
+}

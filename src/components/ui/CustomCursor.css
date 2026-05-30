@@ -1,0 +1,40 @@
+
+
+.custom-cursor__outer--active {
+  width: 48px;
+  height: 48px;
+}
+
+.custom-cursor__inner {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: var(--pink-300);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  box-shadow: 0 0 10px rgba(255, 183, 220, 0.6);
+}
+
+/* ============================================ */
+/* HIDE ON TOUCH DEVICES */
+/* ============================================ */
+
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor__outer,
+  .custom-cursor__inner {
+    display: none;
+  }
+}
+
+/* ============================================ */
+/* ACCESSIBILITY */
+/* ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor__outer {
+    transition: none;
+  }
+}

@@ -1,0 +1,327 @@
+.contact {
+  position: relative;
+  min-height: 100vh;
+  padding-block: var(--space-3xl);
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.contact__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.contact__blob--1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--pink-glow), transparent);
+  top: -200px;
+  right: -200px;
+  animation: driftSlow 26s ease-in-out infinite;
+}
+
+.contact__blob--2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--purple-glow), transparent);
+  bottom: -100px;
+  left: -100px;
+  animation: drift 22s ease-in-out infinite;
+}
+
+/* ============================================ */
+/* CONTAINER */
+/* ============================================ */
+
+.contact__container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xl);
+  text-align: center;
+  max-width: 600px;
+}
+
+/* ============================================ */
+/* HEADING */
+/* ============================================ */
+
+.contact__heading-wrapper {
+  position: relative;
+}
+
+.contact__heading-wrapper .heading-h1 {
+  margin-bottom: var(--space-xl);
+  line-height: var(--lh-heading);
+}
+
+/* Glow effect behind heading */
+.contact__heading-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(circle, var(--pink-glow-strong), transparent 70%);
+  pointer-events: none;
+  filter: blur(40px);
+  z-index: -1;
+}
+
+/* ============================================ */
+/* EMAIL */
+/* ============================================ */
+
+.contact__email {
+  font-size: var(--fs-h2);
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  letter-spacing: var(--ls-heading);
+}
+
+.contact__email::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--pink-300);
+  transition: width 0.3s ease;
+}
+
+.contact__email:hover {
+  color: var(--pink-300);
+}
+
+.contact__email:hover::after {
+  width: 100%;
+}
+
+/* ============================================ */
+/* SOCIALS */
+/* ============================================ */
+
+.contact__socials {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact__social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: var(--fs-body);
+}
+
+.contact__social-link:hover {
+  color: var(--pink-300);
+  border-color: var(--border-glow);
+  box-shadow: 0 0 20px rgba(255, 158, 210, 0.3);
+  transform: scale(1.05);
+}
+
+.contact__social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================ */
+/* FORM */
+/* ============================================ */
+
+.contact__form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: var(--space-lg);
+  background: var(--bg-card);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin-top: var(--space-lg);
+}
+
+.contact__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact__form input,
+.contact__form textarea {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: var(--fs-body);
+  transition: all 0.3s ease;
+}
+
+.contact__form input::placeholder,
+.contact__form textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.contact__form input:focus,
+.contact__form textarea:focus {
+  outline: none;
+  border-color: var(--border-glow);
+  box-shadow: 0 0 0 3px var(--pink-glow), inset 0 0 20px rgba(255, 158, 210, 0.05);
+}
+
+.contact__form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact__form button {
+  align-self: center;
+  margin-top: var(--space-sm);
+}
+
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+
+@media (max-width: 1024px) {
+  .contact__blob--1 {
+    width: 400px;
+    height: 400px;
+  }
+
+  .contact__blob--2 {
+    width: 350px;
+    height: 350px;
+  }
+
+  .contact__heading-wrapper::before {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding-block: var(--space-xl);
+  }
+
+  .contact__container {
+    gap: var(--space-xl);
+  }
+
+  .contact__heading-wrapper .heading-h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: var(--space-lg);
+  }
+
+  .contact__email {
+    font-size: var(--fs-h3);
+  }
+
+  .contact__socials {
+    gap: 1rem;
+  }
+
+  .contact__form {
+    padding: var(--space-md);
+    gap: 1rem;
+  }
+
+  .contact__blob--1,
+  .contact__blob--2 {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    min-height: auto;
+  }
+
+  .contact__heading-wrapper .heading-h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: var(--space-md);
+  }
+
+  .contact__email {
+    font-size: clamp(1.1rem, 4vw, 1.25rem);
+  }
+
+  .contact__socials {
+    gap: 0.75rem;
+    flex-direction: column;
+  }
+
+  .contact__social-link {
+    width: 100%;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+  }
+
+  .contact__form {
+    gap: 1rem;
+    padding: var(--space-sm);
+  }
+
+  .contact__form button {
+    width: 100%;
+  }
+}
+
+/* ============================================ */
+/* ACCESSIBILITY */
+/* ============================================ */
+
+.contact__email:focus-visible,
+.contact__social-link:focus-visible {
+  outline: 2px solid var(--pink-400);
+  outline-offset: 2px;
+}
+
+.contact__form input:focus-visible,
+.contact__form textarea:focus-visible {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__blob {
+    animation: none;
+  }
+
+  .contact__email,
+  .contact__social-link {
+    transition: none;
+  }
+
+  .contact__email:hover,
+  .contact__social-link:hover {
+    transform: none;
+  }
+}

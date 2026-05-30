@@ -1,0 +1,53 @@
+.app__main {
+  position: relative;
+  z-index: var(--z-content);
+}
+
+/* ============================================ */
+/* SECTION SPACING */
+/* ============================================ */
+
+section {
+  position: relative;
+  z-index: var(--z-content);
+}
+
+/* ============================================ */
+/* SCROLL ANIMATIONS SETUP */
+/* ============================================ */
+
+[data-speed] {
+  will-change: transform;
+}
+
+/* ============================================ */
+/* SMOOTH SCROLL WRAPPER */
+/* ============================================ */
+
+#smooth-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#smooth-content {
+  width: 100%;
+  position: relative;
+  will-change: transform;
+  z-index: 0;
+}
+
+/* ============================================ */
+/* ACCESSIBILITY */
+/* ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  #smooth-wrapper,
+  #smooth-content {
+    position: static;
+  }
+}
