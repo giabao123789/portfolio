@@ -18,16 +18,22 @@ export default function App(): React.ReactNode {
     // Initialize ScrollSmoother
     if (!prefersReducedMotion()) {
       try {
-        ScrollSmoother.create({
+        const smoother = ScrollSmoother.create({
           wrapper: '#smooth-wrapper',
           content: '#smooth-content',
           smooth: 1.5,
           effects: true,
           normalizeScroll: true,
+          ignoreMobileResize: true,
           onUpdate: (proxy) => {
             // Handle parallax updates
           },
         })
+
+        setTimeout(() => {
+          ScrollTrigger.refresh()
+          if (smoother) smoother.refresh()
+        }, 500)
       } catch (error) {
         console.error('ScrollSmoother error:', error)
       }
@@ -59,7 +65,7 @@ export default function App(): React.ReactNode {
             <Skills />
             <Projects />
             <Experience />
-            <Services />
+            
             <Contact />
           </main>
           <Footer />

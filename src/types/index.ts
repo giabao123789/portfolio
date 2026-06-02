@@ -8,6 +8,7 @@ export interface Project {
   github?: string;
   live?: string;
   image?: string;
+    period?: string;
 }
 
 export interface Experience {
@@ -17,6 +18,7 @@ export interface Experience {
   period: string;
   description: string;
   responsibilities: string[];
+  technologies: string[];
 }
 
 export interface SkillCategory {

@@ -2,7 +2,24 @@
   position: relative;
   padding-block: var(--space-2xl);
   background: var(--bg-primary);
+  background-image: url('/images/about-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 11, 15, 0.85);
+  z-index: 0;
+}
+
+.about > * {
+  position: relative;
+  z-index: 1;
 }
 
 .about__container {
@@ -75,29 +92,42 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-image: url('/images/back.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.about__image-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 11, 15, 0.5);
+  z-index: 0;
 }
 
 .about__image-placeholder {
+  width: 200px;
+  height: 267px;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.about__image-placeholder img {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--pink-glow), var(--purple-glow));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--fs-hero);
-  font-family: 'Clash Display', sans-serif;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.1);
-  text-transform: uppercase;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .about__accent-card {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 280px;
-  transform: translateY(40px);
-  z-index: 5;
+     position: absolute;
+    bottom: 0;
+    right: 72px;
+    width: 512px;
+    transform: translateY(40px);
+    z-index: 5;
 }
 
 /* ============================================ */

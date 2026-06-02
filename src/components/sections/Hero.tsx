@@ -61,6 +61,17 @@ export default function Hero(): React.ReactNode {
       {/* 3D Canvas - z-index 0 */}
       <HeroScene className="hero__canvas" />
 
+      {/* Background video */}
+      <video
+        className="hero__video-bg"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src="/videos/hero-bg.mp4" type="video/mp4" />
+      </video>
+
       {/* Background blobs */}
       <div className="hero__blob hero__blob--1" data-speed="0.4" />
       <div className="hero__blob hero__blob--2" data-speed="0.5" />
@@ -75,13 +86,14 @@ export default function Hero(): React.ReactNode {
       {/* Content container */}
       <div className="hero__content">
         {/* Status indicator */}
-        <div className="hero__status">
-          <span className="hero__status-dot" />
-          <span className="hero__status-text">Available for work</span>
-        </div>
+        
 
         {/* Main heading with glow */}
         <div className="hero__heading-wrapper">
+          <div className="hero__status">
+          <span className="hero__status-dot" />
+          <span className="hero__status-text">Available for work</span>
+        </div>
           <h1 ref={headingRef} className="hero__heading">
             Trần Gia Bảo<br />
           

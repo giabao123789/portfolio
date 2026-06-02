@@ -5,6 +5,7 @@ import { useWebGL, type WebGLCapabilities } from '@/hooks/useWebGL'
 import FloatingObjects from './FloatingObjects'
 import ParticleField from './ParticleField'
 import PostFX from './PostFX'
+import Character from './Character'
 
 interface HeroSceneProps {
   className?: string
@@ -51,6 +52,7 @@ function HeroSceneContent({ capabilities }: { capabilities: WebGLCapabilities })
 
       {/* Scene Objects */}
       <FloatingObjects />
+      <Character />
       <ParticleField capabilities={capabilities} />
 
       {/* Postprocessing - skip on mobile */}

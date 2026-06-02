@@ -2,7 +2,24 @@
   position: relative;
   padding-block: var(--space-2xl);
   background: var(--bg-secondary);
+  background-image: url('/images/skills-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 11, 15, 0.85);
+  z-index: 0;
+}
+
+.skills > * {
+  position: relative;
+  z-index: 1;
 }
 
 .skills__container {
@@ -32,12 +49,13 @@
   padding: var(--space-md) 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  transform: skewX(-5deg);
-}
+  transform: skewX(-15deg);
+} 
 
 .skills__marquee--reverse {
   opacity: 0.7;
-  transform: skewX(-5deg);
+  transform: skewX(-15deg);
+  margin-top: -1rem;
 }
 
 .skills__marquee :global(.rfm-marquee) {

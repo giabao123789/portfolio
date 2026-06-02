@@ -61,13 +61,24 @@ export default function Experience(): React.ReactNode {
                     {/* Responsibilities */}
                     {exp.responsibilities && exp.responsibilities.length > 0 && (
                       <ul className="experience__responsibilities">
-                        {exp.responsibilities.slice(0, 3).map((resp, idx) => (
+                        {exp.responsibilities.map((resp, idx) => (
                           <li key={idx}>
                             <span className="experience__bullet" />
                             {resp}
                           </li>
                         ))}
                       </ul>
+                    )}
+
+                    {/* Technologies */}
+                    {exp.technologies && exp.technologies.length > 0 && (
+                      <div className="experience__tech-stack">
+                        {exp.technologies.map((tech, idx) => (
+                          <span key={idx} className="experience__tech-pill">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     )}
                   </div>
                 </GlowCard>

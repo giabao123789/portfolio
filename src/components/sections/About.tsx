@@ -28,11 +28,13 @@ export default function About(): React.ReactNode {
         <div className="about__left">
           <p className="text-label">About Me</p>
 
-          <h2 ref={headingRef} className="heading-h2">
-            Passionate about building scalable, modern applications with clean architecture.
-          </h2>
+          <h2 ref={headingRef} className="about__description text-body">
+I am a recent Information Technology graduate with hands-on experience in building and deploying
+fullstack web applications using <p>NestJS</p> and Next.js. I am seeking a Fullstack or Junior Backend Developer
+position to apply my technical skills, contribute to scalable and high-performance web applications, and
+grow into a professional Software Engineer</h2>
 
-          <p className="about__description text-body">{aboutText}</p>
+         
 
           {/* Stats row */}
           <div className="about__stats">
@@ -54,18 +56,18 @@ export default function About(): React.ReactNode {
         {/* Right column */}
         <div className="about__right">
           {/* Main image card */}
-          <GlowCard interactive variant="default" className="about__image-card">
-            <div className="about__image-placeholder">
-              <span>Bảo</span>
-            </div>
-          </GlowCard>
+         <GlowCard interactive variant="default" className="about__image-card">
+  <div className="about__image-placeholder">
+    <img 
+      src="/images/avatar.png" 
+      alt="Trần Gia Bảo"
+      style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+    />
+  </div>
+</GlowCard>
 
           {/* Floating accent card */}
-          <GlowCard interactive variant="accent" className="about__accent-card">
-            <p className="text-label">Tech Focus</p>
-            <p className="heading-h3">Backend & APIs</p>
-            <p className="text-small">Specializing in NestJS, scalable backend architecture, and real-time systems.</p>
-          </GlowCard>
+         
         </div>
 
         {/* Background blob */}

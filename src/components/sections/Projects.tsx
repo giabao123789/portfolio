@@ -36,56 +36,80 @@ export default function Projects(): React.ReactNode {
 
         {/* Projects grid */}
         <div className="projects__grid">
-          {projects.map((project, idx) => (
-            <GlowCard
-              key={project.id}
-              ref={(el) => {
-                cardRefs.current[idx] = el
-              }}
-              interactive
-              variant="default"
-              className="projects__card"
-              onMouseEnter={() => cardRefs.current[idx] && cardHoverIn(cardRefs.current[idx])}
-              onMouseLeave={() => cardRefs.current[idx] && cardHoverOut(cardRefs.current[idx])}
-            >
-              {/* Project number */}
-              <div className="projects__card-number">{String(idx + 1).padStart(2, '0')}</div>
+          {projects.map((project, idx) => {
+            const projectPeriod = (project as any).period
 
-              {/* Image placeholder */}
-              <div className="projects__image">
-                <span className="projects__image-text">{project.title}</span>
-              </div>
+            return (
+              <GlowCard
+                key={project.id}
+                ref={(el) => {
+                  cardRefs.current[idx] = el
+                }}
+                interactive
+                variant="default"
+                className="projects__card"
+                onMouseEnter={() => cardRefs.current[idx] && cardHoverIn(cardRefs.current[idx])}
+                onMouseLeave={() => cardRefs.current[idx] && cardHoverOut(cardRefs.current[idx])}
+              >
+                <div className="projects__card-number">{String(idx + 1).padStart(2, '0')}</div>
 
-              {/* Content */}
-              <div className="projects__card-content">
-                <h3 className="heading-h3">{project.title}</h3>
-                <p className="projects__description text-body">{project.description}</p>
+                <div className="projects__card-content">
+                  <div className="projects__card-header">
+                    <h3 className="heading-h3">{project.title}</h3>
+                    <div className="projects__actions">
+                      {project.github && (
+                        <a
+                          className="projects__button projects__button--github"
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="GitHub"
+                        >
+                          GitHub
+                        </a>
+                      )}
+                      {project.live && project.live.trim() !== '' && (
+                        <a
+                          className="projects__button projects__button--live"
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Live demo"
+                        >
+                          Live
+                        </a>
+                      )}
+                    </div>
+                  </div>
 
-                {/* Tech stack */}
-                <div className="projects__tech-stack">
-                  {project.technologies.slice(0, 3).map((tech, idx) => (
-                    <span key={idx} className="projects__tech-pill">
-                      {tech}
-                    </span>
-                  ))}
+                  <div className="projects__meta-row">
+                    {projectPeriod && <span className="projects__period text-label">{projectPeriod}</span>}
+                    <p className="projects__description text-body">{project.description}</p>
+                  </div>
+
+                  <p className="projects__long-description text-body">{project.longDescription}</p>
+
+                  <div className="projects__divider" />
+
+                  <div className="projects__features">
+                    {project.features.map((feature, featureIdx) => (
+                      <span key={featureIdx} className="projects__feature-pill">
+                        • {feature}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="projects__tech-stack">
+                    {project.technologies.map((tech, techIdx) => (
+                      <span key={techIdx} className="projects__tech-pill">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-
-                {/* Links */}
-                <div className="projects__links">
-                  {project.live && (
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" aria-label="Live demo">
-                      <FiExternalLink />
-                    </a>
-                  )}
-                  {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                      <FiGithub />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </GlowCard>
-          ))}
+              </GlowCard>
+            )
+          })}
         </div>
       </div>
     </section>

@@ -66,9 +66,7 @@ export default function Navbar(): React.ReactNode {
         </ul>
 
         {/* CTA Button */}
-        <MagneticButton variant="primary" size="sm">
-          Hire Me
-        </MagneticButton>
+     
 
         {/* Mobile Menu Toggle */}
         <button className="navbar__toggle" onClick={handleMobileMenuToggle} aria-label="Toggle menu">

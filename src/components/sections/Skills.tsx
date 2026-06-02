@@ -18,6 +18,7 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
   'Database': <FiDatabase />,
   'DevOps & Tools': <FiTool />,
   'AI & APIs': <FiZap />,
+  'Testing': <FiZap />
 }
 
 export default function Skills(): React.ReactNode {
@@ -85,14 +86,7 @@ export default function Skills(): React.ReactNode {
         <div className="skills__divider" />
 
         {/* Filter tabs */}
-        <div className="skills__filters">
-          <button
-            className={`skills__filter-tab ${!activeCategory ? 'active' : ''}`}
-            onClick={() => setActiveCategory(null)}
-          >
-            All
-          </button>
-          {techStack.map((cat) => (
+        <div className="skills__filters">  {techStack.map((cat) => (
             <button
               key={cat.category}
               className={`skills__filter-tab ${activeCategory === cat.category ? 'active' : ''}`}
@@ -101,6 +95,13 @@ export default function Skills(): React.ReactNode {
               {cat.category}
             </button>
           ))}
+          <button
+            className={`skills__filter-tab ${!activeCategory ? 'active' : ''}`}
+            onClick={() => setActiveCategory(null)}
+          >
+            All
+          </button>
+        
         </div>
 
         {/* Skills grid */}
