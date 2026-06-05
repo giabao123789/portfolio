@@ -1,5 +1,6 @@
 services:
-  - type: static_site
+  - type: web_service
+    env: static
     name: portfolio
     root: .
     buildCommand: npm install && npm run build
