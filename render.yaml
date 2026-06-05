@@ -1,7 +1,5 @@
-services:
-  - type: web_service
-    env: static
-    name: portfolio
+staticSites:
+  - name: portfolio
     root: .
     buildCommand: npm install && npm run build
     publishPath: dist
