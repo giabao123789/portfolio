@@ -73,8 +73,7 @@ export default function Hero(): React.ReactNode {
       </video>
 
       {/* Background blobs */}
-      <div className="hero__blob hero__blob--1" data-speed="0.4" />
-      <div className="hero__blob hero__blob--2" data-speed="0.5" />
+      
       <div className="hero__blob hero__blob--3" data-speed="0.35" />
 
       {/* Noise overlay */}

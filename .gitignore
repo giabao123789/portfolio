@@ -39,3 +39,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+dist/assets/index-BrYD5T5Z.js
+dist/assets/index-CpArDTEp.css
