@@ -75,11 +75,11 @@ export default function Character() {
   useFrame(({ clock }) => {
     if (!group.current) return
 
-    const targetRotationY = (mousePos.current.x / window.innerWidth - 0.5) * 0.6
-    const targetRotationX = (mousePos.current.y / window.innerHeight - 0.5) * 0.2
+    const targetRotationY = (mousePos.current.x / window.innerWidth - 0.5) * 1.5
+    const targetRotationX = (mousePos.current.y / window.innerHeight - 0.5) * 0.6
 
-    group.current.rotation.y = lerp(group.current.rotation.y, targetRotationY, 0.05)
-    group.current.rotation.x = lerp(group.current.rotation.x, targetRotationX, 0.05)
+    group.current.rotation.y = lerp(group.current.rotation.y, targetRotationY, 0.1)
+    group.current.rotation.x = lerp(group.current.rotation.x, targetRotationX, 0.1)
     group.current.position.y = basePosition[1] + Math.sin(clock.elapsedTime * 0.8) * 0.08
   })
 
