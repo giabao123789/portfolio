@@ -2,6 +2,5 @@ staticSites:
   - name: portfolio
     root: .
     buildCommand: npm install && npm run build
-    publishPath: dist
+    publishDirectory: dist
     autoDeploy: true
-    plan: free
