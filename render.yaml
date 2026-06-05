@@ -1,6 +1,4 @@
 staticSites:
   - name: portfolio
-    root: .
     buildCommand: npm run build
     publishDirectory: dist
-    autoDeploy: true
