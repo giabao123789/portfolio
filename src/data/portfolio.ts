@@ -64,7 +64,7 @@ export const projects: Project[] = [
       'Achieved Lighthouse performance 92/100 and accessibility 95/100; designed mobile-first responsive UI with Tailwind CSS',
     ],
     github: 'https://github.com/giabao123789/weather-forecast-app',
-    live: '',
+    live: 'https://weather-web-0m0x.onrender.com/',
     period: '03/2026 - 04/2026',
   },
 ]
